@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weddingdoc</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+  <style>
+ .hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    top: 40%;
+    transform: translateY(-50%);
+}
+
+
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  text-align: center;
+  max-width: 90%;
+}
+
+.album-img-show {
+  width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Hamburger -->
+  <div class="hamburger" id="menu-btn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <h2>Categories</h2>
+    <ul style="list-style:none; padding:0; margin:0;">
+  <li class="wedding-link">Live</li>
+  <li class="wedding-link">Albums</li>
+  <li class="wedding-link">Haldi</li>
+  <li class="wedding-link">Night Party</li>
+  <li class="wedding-link">First Date</li>
+    <li class="wedding-link">Save the Date</li>
+
+ 
+ <!-- Music Section -->
+<li class="wedding-link">
+  <div class="music-section">
+    <div class="music-header">
+      <span id="music-toggle" class="speaker-icon">🔊 Play Music</span>
+    </div>
+
+    <!-- Search bar -->
+    <!-- <div class="spotify-search-container" id="spotify-search-container">
+      <input type="text" id="spotify-search" placeholder="Paste Spotify track/playlist URL">
+      <button id="spotify-play-btn">Play</button>
+    </div> -->
+
+    <!-- Spotify iframe embed -->
+    <div class="spotify-embed-container" id="spotify-embed-container">
+     <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1sCUrKZBbDPL0N2whJPTzw?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
+  </div>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+</div>
+<style>
+ .wedding-link {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  background: linear-gradient(45deg, #e84393, #ffb3d9);
+  
+  background-clip: text;            /* Standard */
+  -webkit-background-clip: text;    /* Required for Chrome/Safari */
+  
+  color: transparent;
+  cursor: pointer;
+  margin-bottom: 6px;
+}
+
+</style>
+
+
+
+
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <img src="images/4-2-1-1.webp" alt="Wedding Hero Image" class="hero-img">
+    <div class="hero-content">
+      <h1></h1>
+    </div>
+  </section>
+ <!-- <section id="hero" class="hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+        <source src="images/test.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="hero-content">
+        <h1>Welcome to the Wedding</h1>
+    </div>
+</section> -->
+
+
+
+
+  <!-- Live Camera Section -->
+  <section class="live-section" id="live-section">
+    <button class="fullscreen-btn" id="fullscreen-btn">Go to Wedding</button>
+    <video id="live" autoplay playsinline></video>
+  </section>
+
+  
+
+
+
+<section id="albums" class="albums">
+  <h2>Wedding Albums</h2>
+
+  <div class="album-grid">
+
+   <div class="album-card open-album" 
+     data-images='["images/family1.jpg","images/family2.jpg","images/family3.jpg"]'>
+  <img src="images/wed.jpg" alt="Family">
+  <div class="album-info"><h3>family</h3></div>
+</div>
+
+<div class="album-card open-album"
+     data-images='["images/cousinis 1.jpg","images/cousinis 2.jpg","images/cousinis 4.jpg"]'>
+  <img src="images/cousinis 4.jpg" alt="Haldi">
+  <div class="album-info"><h3>Cousines</h3></div>
+</div>
+
+<div class="album-card open-album"
+     data-images='["images/bridefrds4.jpg","images/bridefrds2.jpg","images/bridefrds3.jpg"]'>
+  <img src="images/bridefrds1.jpg" alt="Reception">
+  <div class="album-info"><h3>Bridefrds</h3></div>
+</div>
+
+
+
+<div class="album-card open-album"
+     data-images='["images/friends4.jpg","images/friends2.jpg","images/friends3.jpg"]'>
+  <img src="images/friends1.jpg" alt="Pre Wedding">
+  <div class="album-info"><h3> Friends</h3></div>
+</div>
+
+<div class="album-card open-album"
+     data-images='["images/Mehendi1.jpg","images/Mehendi2.jpg","images/Mehendi3.jpg","images/Mehendi4.jpg"]'>
+  <img src="images/Mehendi1.jpg" alt="Mehendi">
+  <div class="album-info"><h3>Mehendi</h3></div>
+</div>
+
+
+  </div>
+</section>
+
+
+
+<div class="modal" id="albumModal">
+  <div class="modal-content">
+    <span class="close-btn" id="closeModal">&times;</span>
+
+    <img id="albumImage" src="" class="album-img-show">
+
+    <div class="nav-btns">
+      <button id="prevBtn">← Prev</button>
+      <button id="nextBtn">Next →</button>
+    </div>
+  </div>
+</div>
+
+
+<section class="haldi-section" id="haldi">
+  <div class="haldi-header">
+    <h2>Haldi Ceremony</h2>
+    <p>A joyful celebration filled with turmeric, love, and bright memories.</p>
+  </div>
+
+  <div class="haldi-content">
+
+    <!-- Video Block -->
+    <div class="haldi-video-card">
+      <video class="haldi-video" controls poster="images/weddc.png">
+        <source src="images/wedd.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <!-- Image Gallery -->
+    <div class="haldi-gallery">
+      <div class="haldi-img"><img src="images/Aparna1.jpg"></div>
+      <div class="haldi-img tall"><img src="images/Aparna2.jpg"></div>
+      <div class="haldi-img"><img src="images/Aparna3.jpg "></div>
+      <div class="haldi-img wide"><img src="images/Aparna4.jpg"></div>
+      <div class="haldi-img"><img src="images/Aparna5.jpg"></div>
+      <div class="haldi-img talll"><img src="images/Aparna6.jpg"></div>
+        <div class="haldi-img talll"><img src="images/Aparna7.jpg"></div>
+      <div class="haldi-img talll"><img src="images/Aparna8.jpg"></div>
+
+    </div>
+
+  </div>
+</section>
+
+   
+
+
+<section class="night-party" id="night-party">
+  <div class="night-header">
+    <h2>Sangeet</h2>
+    <p>Lights, music, dance & unforgettable moments under the stars.</p>
+  </div>
+
+  <div class="night-content">
+
+    <!-- Video Card -->
+    <div class="night-video-card">
+      <video controls poster="images/Crystalline-photography-4685.jpg">
+        <source src="images/wedd3.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <!-- Image Gallery -->
+    <div class="night-gallery">
+      <div class="night-img"><img src="images/Crystalline-photography-4684.jpg"></div>
+      <div class="night-img tall"><img src="images/couple-in-middle-east.jpg"></div>
+      <div class="night-img"><img src="images/sag1.jpg"></div>
+      <div class="night-img wide"><img src="images/sag3.jpg"></div>
+      <div class="night-img"><img src="images/sag2.jpg"></div>
+      <div class="night-img tall"><img src="images/sag4.jpg"></div>
+        <div class="night-img tall"><img src="images/sag5.jpg"></div>
+      <div class="night-img tall"><img src="images/sag6.jpg"></div>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="bento-full" class="bento-full">
+<h2 class="bento-title" 
+    style="
+      font-family: 'Cinzel', serif;
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #111;
+      text-align: center;
+      margin-bottom: 20px;
+    ">
+    Bride Photos 
+   
+</h2>
+
+  <div class="bento-grid">
+    <div class="bento-box large">
+      <img src="images/wedding-photographer-in-Hyderabad.jpg">
+    </div>
+
+    <div class="bento-box">
+      <img src="images/wedding-photographers-in-gurugram-scaled.webp">
+    </div>
+
+    <div class="bento-box tall">
+      <img src="images/b1.jpg">
+    </div>
+
+    <div class="bento-box">
+      <img src="images/orphic-films-dharampeth-nagpur-wedding-photographers-1ats2rhzok.avif">
+    </div>
+
+    <div class="bento-box wide">
+      <img src="images/two-house-thumb-700x452.jpg">
+    </div>
+    <div class="bento-box wide">
+      <img src="images/b4.jpg">
+    </div>
+
+  </div>
+</section>
+<section id="firstdate" class="photo-section">
+<h2 class="photo-title"
+    style="
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      font-weight: 700;
+      color: #222;
+      letter-spacing: 1px;
+      text-align: center;
+      margin-bottom: 20px;
+    ">
+  save Date 
+</h2>
+
+  <div class="photo-grid">
+
+    <!-- 12 photos (4 each row × 3 rows) -->
+    <img class="photo-card" src="images/f1.jpg">
+    <img class="photo-card" src="images/f2.jpg">
+    <img class="photo-card" src="images/f3.jpg">
+    <img class="photo-card" src="images/f4.jpg">
+
+    <img class="photo-card" src="images/f5.jpg">
+    <img class="photo-card" src="images/f6.jpg">
+    <img class="photo-card" src="images/f7.jpg">
+    <img class="photo-card" src="images/f8.jpg">
+
+    <img class="photo-card" src="images/f9.jpg">
+    <img class="photo-card" src="images/f11.jpg">
+    <img class="photo-card" src="images/f12.jpg">
+    <img class="photo-card" src="images/f13.jpg">
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<section class="save-date" id="save-date">
+  <div class="save-date-container">
+
+    <!-- Main Image -->
+    <div class="save-img-box">
+      <img src="images/b2.jpg" alt="Save The Date">
+    </div>
+
+    <!-- Content -->
+    <div class="save-content">
+      <h2>Save The Date</h2>
+      <h3 class="couple-names">Devanadha & Midhun</h3>
+
+      <p class="save-date-text">We are tying the knot!</p>
+
+      <div class="save-details">
+        <span class="date">15 • February • 2025</span>
+        <span class="place">Kerala, India</span>
+      </div>
+
+      <!-- Main Video -->
+      <div class="save-video-box">
+        <video class="haldi-video" controls poster="images/b6.jpg">
+          <source src="images/wedd5.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- EXTRA PHOTOS SECTION -->
+  <div class="extra-photos-title">More Beautiful Moments</div>
+
+  <div class="save-extra-photos">
+    <div class="extra-photo"><img src="images/c635381033c6e364f452b26ddd6b1102.jpg"></div>
+    <div class="extra-photo tall"><img src="images/w6.jpg"></div>
+    <div class="extra-photo"><img src="images/w1.jpg"></div>
+    <div class="extra-photo wide"><img src="images/w2.jpg"></div>
+    <div class="extra-photo"><img src="images/w3.jpg"></div>
+    <div class="extra-photo tall"><img src="images/w7.jpg"></div>
+    <div class="extra-photo tall"><img src="images/w4.jpg"></div>
+    <div class="extra-photo tall"><img src="images/w5.jpg"></div>
+
+  </div>
+
+
+
+  <!-- EXTRA VIDEOS SECTION -->
+  <div class="extra-videos-title">Highlights</div>
+
+  <div class="save-extra-videos">
+    <div class="extra-video-card">
+      <video  class="haldi-video"  controls poster="images/c4.jpg">
+        <source src="images/h1.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="extra-video-card">
+      <video class="haldi-video" controls poster="images/couple-in-middle-east.jpg">
+        <source src="images/h3.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="extra-video-card">
+      <video controls poster="images/c1.jpg">
+        <source src="images/h2.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+</section>
+
+
+<footer class="wedding-footer">
+  <div class="footer-container">
+
+    <!-- Left -->
+    <div class="footer-section footer-left">
+      <h2 class="footer-logo">Devanadha 
+        <span style="font-family:'Great Vibes',cursive;">❤</span> 
+        Midhun
+      </h2>
+      <p class="footer-desc">
+        Crafting premium wedding websites & memories with elegance and perfection.
+      </p>
+    </div>
+
+    <!-- Center Cartoon Image -->
+    <div class="footer-section footer-center">
+      <img src="images/c8.png" alt="Wedding Cartoon" class="footer-cartoon">
+    </div>
+
+    <!-- Right -->
+    <div class="footer-section footer-right">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#live-section">Live Wedding</a></li>
+        <li><a href="#albums">Albums</a></li>
+        <li><a href="#haldi">Haldi Ceremony</a></li>
+
+        <li><a href="#night-party">Night Party</a></li>
+          <li><a href="#bento-full">Bride Photos</a></li>
+
+        <li><a href="#firstdate">First Date</a></li>
+                <li><a href="#save-date">Save the Date</a></li>
+
+
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2025 
+    <a href="https://nexwidgetsolutions.vercel.app/" target="_blank" class="footer-link">
+      NexWidget Solutions
+    </a> 
+    — Crafted with ❤️ for Weddings
+  </div>
+</footer>
+
+
+
+ 
+<script>
+const albumCards = document.querySelectorAll(".open-album");
+const modal = document.getElementById("albumModal");
+const modalImg = document.getElementById("albumImage");
+const closeModal = document.getElementById("closeModal");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+
+let images = [];
+let index = 0;
+
+// 🖼️ OPEN ALBUM
+albumCards.forEach(card => {
+    card.addEventListener("click", () => {
+        images = JSON.parse(card.dataset.images);
+        index = 0;
+        modalImg.src = images[index];
+        modal.style.display = "flex";
+    });
+});
+
+// ❌ CLOSE
+closeModal.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+// ⬅️ PREVIOUS IMAGE
+prevBtn.addEventListener("click", () => {
+    index = (index - 1 + images.length) % images.length;
+    modalImg.src = images[index];
+});
+
+// ➡️ NEXT IMAGE
+nextBtn.addEventListener("click", () => {
+    index = (index + 1) % images.length;
+    modalImg.src = images[index];
+});
+
+
+
+ // ===== Sidebar Toggle =====
+  const menuBtn = document.getElementById('menu-btn');
+  const sidebar = document.getElementById('sidebar');
+
+  menuBtn.addEventListener('click', () => {
+    menuBtn.classList.toggle('active');
+    sidebar.classList.toggle('active');
+  });
+
+  // ===== Smooth Scroll for Sidebar Links =====
+  document.querySelectorAll('.wedding-link').forEach(link => {
+    link.addEventListener('click', () => {
+      const target = link.textContent.trim();
+
+      sidebar.classList.remove('active');
+      menuBtn.classList.remove('active');
+
+      if (target === "Live") document.getElementById('live-section').scrollIntoView({ behavior: "smooth" });
+      if (target === "Albums") document.getElementById('albums').scrollIntoView({ behavior: "smooth" });
+      if (target === "Haldi") document.getElementById('haldi').scrollIntoView({ behavior: "smooth" });
+      if (target === "Night Party") document.getElementById('night-party').scrollIntoView({ behavior: "smooth" });
+      if (target === "Save the Date") document.getElementById('save-date').scrollIntoView({ behavior: "smooth" });
+      if (target === "First Date") document.getElementById('firstdate').scrollIntoView({ behavior: "smooth" });
+    });
+  });
+
+  // ===== Live Camera Stream =====
+  const liveVideo = document.getElementById('live');
+  const fullscreenBtn = document.getElementById('fullscreen-btn');
+  const liveSection = document.getElementById('live-section');
+
+  if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    navigator.mediaDevices.getUserMedia({ video: true })
+      .then(stream => {
+        liveVideo.srcObject = stream;
+      })
+      .catch(err => {
+        console.error("Camera access denied:", err);
+        liveVideo.insertAdjacentHTML('afterend', '<p style="color:red;">Camera access denied or not supported.</p>');
+      });
+  } else {
+    console.error("getUserMedia not supported");
+    liveVideo.insertAdjacentHTML('afterend', '<p style="color:red;">Your browser does not support live camera.</p>');
+  }
+
+  // ===== Fullscreen Toggle =====
+  fullscreenBtn.addEventListener('click', () => {
+    if (!document.fullscreenElement) {
+      liveSection.requestFullscreen();
+    } else {
+      document.exitFullscreen();
+    }
+  });
+
+  document.addEventListener('fullscreenchange', () => {
+    fullscreenBtn.textContent = document.fullscreenElement ? "Exit Fullscreen" : "Go to Wedding";
+  });
+
+
+
+
+
+
+  
+
+  // Spotify music toggle + search
+const musicToggle = document.getElementById('music-toggle');
+const spotifyContainer = document.getElementById('spotify-embed-container');
+const spotifySearchContainer = document.getElementById('spotify-search-container');
+const spotifySearchInput = document.getElementById('spotify-search');
+const spotifyPlayBtn = document.getElementById('spotify-play-btn');
+
+let isOpen = false;
+
+// Toggle Spotify embed + search visibility
+musicToggle.addEventListener('click', () => {
+  isOpen = !isOpen;
+  spotifyContainer.style.display = isOpen ? 'block' : 'none';
+  spotifySearchContainer.style.display = isOpen ? 'flex' : 'none';
+  musicToggle.style.transform = isOpen ? 'rotate(20deg)' : 'rotate(0deg)';
+});
+
+// Play Spotify URL from input
+spotifyPlayBtn.addEventListener('click', () => {
+  const url = spotifySearchInput.value.trim();
+  if (!url) return alert("Please paste a valid Spotify track/playlist URL.");
+
+  // Convert to embed format
+  let embedUrl = url.replace(/open\.spotify\.com/, 'open.spotify.com/embed');
+  if (!embedUrl.includes('/embed/')) {
+    embedUrl = embedUrl.replace('open.spotify.com', 'open.spotify.com/embed');
+  }
+
+  // Update iframe
+  spotifyContainer.innerHTML = `<iframe 
+    src="${embedUrl}" 
+    width="100%" 
+    height="300" 
+    frameborder="0" 
+    allowtransparency="true" 
+    allow="encrypted-media">
+  </iframe>`;
+});
+
+
+</script>
+
+</body>
+</html>
+
